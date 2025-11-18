@@ -15,3 +15,13 @@ typeof(1)
 typeof(typeof)
 typeof(list())
 ```
+
+### Classes
+```{r}
+data(iris)
+typeof(iris)
+class(iris)
+class(1L)
+```
+
+
