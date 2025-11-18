@@ -142,30 +142,41 @@ x[c(2,2,1,4,5)]
 
 This puts the number associated with each of the position written in c from x itself. 
 
-Assignmet can be understood has a value semantic assignment: `x``and `y`are different vectors with the 
 ```{r}
-x(1) <- 18
-x
-y
+x[0]
 ```
-indexing a vector is made vectors of any length
 
-```{r}
-x(0)
-x(7)
-```
+Returns an empty numeric vector because index 0 has no meaning in R.
+
 ```{r}
 typeof(NA)
 length(NA)
 ```
-Concatenating vectors
+
 
 ```{r}
-c(numeric(0), 5, numeric(0))
+typeof(NA_integer_)
 ```
-Vector must be type uniform, which will trigger 
+
+Now the type is integer.
 ```{r}
-bar <- list(1L, 1.5, "toto", FALSE)
-bar
+x
+x[c(4,1,0,15,6)]
 ```
+
+`0` gets disregarded entirely, so no respective value is found in the new vector; `15` is not a position in x (that has 6 elements) and thus `NA` is printed instead.
+
+```{r}
+y <- c('A', 'B', 'C')
+y[c(TRUE, FALSE, FALSE)]
+```
+
+```{r}
+x
+x[c(-1,-4,-5)]
+x[c(-2,-3,-6)]
+```
+
+We must use either positive indexes or negative ones. The negative indexes remove the value at that position.
+
 
